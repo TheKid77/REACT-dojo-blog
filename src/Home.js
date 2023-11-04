@@ -8,7 +8,7 @@ const Home = () => {
 
     const handleClick = (e) => {
         setName('Luigi');
-        setAge(30);
+        setAge(age +1);
     }
 
     return (
