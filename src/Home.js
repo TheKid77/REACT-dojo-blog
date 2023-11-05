@@ -12,6 +12,11 @@ const Home = () => {
 
     ])
 
+    const handleDelete = (id) => {
+        const newBlogs = blogs.filter(blog => blog.id !== id);
+        setBlogs(newBlogs);
+    }
+
     const handleClick = (e) => {
         setName('Luigi');
         setAge(current => age +1);
@@ -19,8 +24,8 @@ const Home = () => {
 
     return (
         <div className="home">
-            <BlogList blogs={blogs} title="All Blogs" />
-            <BlogList blogs={blogs.filter((blog) => blog.author==="Mario")} title="Mario's Blogs" />
+            <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete} />
+            <BlogList blogs={blogs.filter((blog) => blog.author==="Mario")} title="Mario's Blogs" handleDelete={handleDelete}/>
         </div>
       );
 }
